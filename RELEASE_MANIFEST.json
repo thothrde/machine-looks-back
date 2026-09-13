@@ -1,6 +1,6 @@
 {
   "project": "Wenn die Maschine zurückschaut / When the Machine Looks Back",
-  "release": "RC5.2",
+  "release": "RC5.2.1",
   "date": "2026-09-13",
   "publicCases": 17,
   "publicSources": 29,
@@ -29,13 +29,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "4f8ac6346f03a5483c41eee20233c8349c7388709a10c8930e2a909f83d02e68",
-      "bytes": 3477
+      "sha256": "3092a6b9ef02c8099e773ac7961e349c91765ca54154b6c99ab34f6aa57a284e",
+      "bytes": 3676
     },
     {
       "path": "app.js",
-      "sha256": "8807801cea91658f671ead484e6070b1f787c5f939dff2b02cb1a7b933861d2c",
-      "bytes": 32986
+      "sha256": "a5adbbb18c8a3c833f259d81042a2c0485ea40e54dea96b2953b67d9d5e5aac7",
+      "bytes": 33099
     },
     {
       "path": "data/content.js",
@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/RELEASE_STATUS_2026-09-13.md",
-      "sha256": "58ad6e18b071e0592c547f79608df981451662982d68e2defca5160111df9060",
-      "bytes": 3864
+      "sha256": "642dab9305a380ca25a4725044855debbf6e51867b345c9fe277a46b8a3b8f99",
+      "bytes": 4068
     },
     {
       "path": "docs/SOURCE_METHOD.md",
@@ -144,8 +144,8 @@
     },
     {
       "path": "tests/validate_rc52_semantics.mjs",
-      "sha256": "33dc3c2f62a11988617754dcba4a46edfe577f949a31fa6409972d69c4da9166",
-      "bytes": 3749
+      "sha256": "ed29780356388e74c5bdfb65e0a1a189a73764a3e6fbd827b5e5503d3b996c4c",
+      "bytes": 6916
     }
   ]
 }

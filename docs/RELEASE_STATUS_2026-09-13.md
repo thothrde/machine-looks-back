@@ -1,4 +1,4 @@
-# Release status — RC5.2 — 13 September 2026
+# Release status — RC5.2.1 — 13 September 2026
 
 ## Deterministic PASS
 
@@ -49,6 +49,7 @@ The public explanatory layer now uses a positive descriptive rule:
 - duplicated Cipolla-axis wording and duplicated Q wording are removed
 - the English introduction is substantively aligned paragraph by paragraph with the German introduction, including the full H/K/Q/D/G/R explanations and the three-level ex-ante/ex-post distinction
 - a dedicated semantic regression test checks the per-scenario trace logic, bilingual field completeness, introduction structure, R0/R1 definitions and duplicate-wording guards
+- RC5.2.1 restores the missing English P0/P1/S1 source-status legend and expands parity checks to the complete UI string-key set, legal-section structure, site text and all 29 bilingual source titles
 
 ## Legal/privacy design
 
@@ -66,4 +67,4 @@ The public explanatory layer now uses a positive descriptive rule:
 - repository: `https://github.com/thothrde/machine-looks-back`
 - Pages: `https://thothrde.github.io/machine-looks-back/`
 
-RC5.2 is the publication candidate that incorporates the semantic self-experiment correction, explicit R0/R1 definitions and full German/English content parity.
+RC5.2.1 is the publication candidate that incorporates the semantic self-experiment correction, explicit R0/R1 definitions and full German/English content parity.

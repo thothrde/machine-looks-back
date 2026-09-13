@@ -1,6 +1,6 @@
 # Wenn die Maschine zurückschaut / When the Machine Looks Back
 
-Release candidate RC5.2, 13 September 2026.
+Release candidate RC5.2.1, 13 September 2026.
 
 A static, bilingual public information app built around a multidimensional “CT scan” of reasoning movements, a finite fictional self-experiment, and source-grounded real-world case reconstructions.
 
@@ -80,6 +80,7 @@ The public app states positively what it does. The home page, introduction, meth
 - duplicated Cipolla and Q wording removed
 - the English introduction has been expanded to full substantive parity with the German version
 - `tests/validate_rc52_semantics.mjs` guards these invariants in future releases
+- RC5.2.1 completes German/English UI parity by restoring the English P0/P1/S1 source-status legend and extends the regression test to full UI-key, legal-section, site-text and source-title parity
 
 ## Independent audit
 
