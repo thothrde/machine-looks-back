@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Wenn die Maschine zurückschaut — interaktives Selbstexperiment und dokumentierte Fallrekonstruktionen über Entscheidungen, Evidenz und Revision.">
+  <meta name="robots" content="index,follow">
+  <meta name="referrer" content="no-referrer">
+  <link rel="canonical" href="https://thothrde.github.io/machine-looks-back/">
+  <link rel="alternate" hreflang="de" href="https://thothrde.github.io/machine-looks-back/?lang=de">
+  <link rel="alternate" hreflang="en" href="https://thothrde.github.io/machine-looks-back/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://thothrde.github.io/machine-looks-back/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wenn die Maschine zurückschaut">
+  <meta property="og:description" content="Interaktives Selbstexperiment und dokumentierte Fallrekonstruktionen über Entscheidungen, Evidenz und Revision.">
+  <meta property="og:url" content="https://thothrde.github.io/machine-looks-back/">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; frame-src 'none'; media-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Wenn die Maschine zurückschaut</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <noscript><div class="noscript">Diese interaktive App benötigt JavaScript. / This interactive app requires JavaScript.</div></noscript>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <div id="app-shell">
+    <header class="site-header" id="top">
+      <a class="brand" href="#home" aria-label="Startseite">
+        <span class="brand-mark" aria-hidden="true">◌</span>
+        <span class="brand-text" data-i18n="brand">Wenn die Maschine zurückschaut</span>
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="#experiment" data-i18n="navExperiment">Selbstexperiment</a>
+        <a href="#cases" data-i18n="navCases">Reale Fälle</a>
+        <a href="#essay" data-i18n="navEssay">Einführung</a>
+        <a href="#method" data-i18n="navMethod">Methodik</a>
+        <a href="#legal" data-i18n="navLegal">Recht & Datenschutz</a>
+      </nav>
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Sprache wechseln">EN</button>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section id="home" class="view view-home active" data-route="home">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="heroEyebrow">Doppelte Optik · Entscheidungen unter Unsicherheit</p>
+            <h1 data-i18n="heroTitle">Wenn die Maschine zurückschaut</h1>
+            <p class="hero-lead" data-i18n="heroLead">Ein Beobachtungsrahmen für das, was zwischen Modell und Wirklichkeit geschieht.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#experiment" data-i18n="heroCta1">Selbstexperiment starten</a>
+              <a class="btn btn-ghost" href="#cases" data-i18n="heroCta2">Fallrekonstruktionen erkunden</a>
+            </div>
+            <div class="hero-proof" role="list" aria-label="Projektprinzipien">
+              <div role="listitem"><strong>H · K · Q · D · G · R</strong><span data-i18n="heroProof1">mehrdimensionale Denkspur</span></div>
+              <div role="listitem"><strong data-i18n="heroProof2a">Blindphase</strong><span data-i18n="heroProof2b">vor dem Ausgang</span></div>
+              <div role="listitem"><strong data-i18n="heroProof3a">Primärquellen</strong><span data-i18n="heroProof3b">bei realen Fällen</span></div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="Abstrakte dreidimensionale Darstellung eines Vergleichsraums">
+            <canvas id="hero-canvas" width="720" height="720" role="img" aria-label="Dreidimensional wirkendes Netzwerk aus Beobachtungspunkten"></canvas>
+            <div class="hero-visual-label" aria-hidden="true">
+              <span>MODEL</span><span>WORLD</span><span>EVIDENCE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-panels">
+          <article class="feature-card">
+            <span class="feature-index">01</span>
+            <h2 data-i18n="homeCard1Title">Sie entscheiden zuerst</h2>
+            <p data-i18n="homeCard1Text">Informationen erscheinen in der Reihenfolge, in der sie verfügbar sind. Der Ausgang bleibt zunächst verborgen.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index">02</span>
+            <h2 data-i18n="homeCard2Title">Die Welt antwortet</h2>
+            <p data-i18n="homeCard2Text">Neue Evidenz zwingt zur Frage, ob ein Modell bestehen, angepasst oder verworfen werden sollte.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index">03</span>
+            <h2 data-i18n="homeCard3Title">Reale Fälle widerstehen</h2>
+            <p data-i18n="homeCard3Text">Behörden, Unternehmen und historische Episoden werden quellengebunden rekonstruiert — mit Quellenstatus, Gegenlesart und klaren Aussagegrenzen.</p>
+          </article>
+        </div>
+
+        <section class="dimension-band" aria-labelledby="dimension-heading">
+          <div class="section-kicker" data-i18n="dimensionsKicker">Sechs Bewegungen</div>
+          <h2 id="dimension-heading" data-i18n="dimensionsHeading">Der mehrdimensionale „CT-Scan“ durch die KI</h2>
+          <div id="dimension-grid" class="dimension-grid"></div>
+        </section>
+      </section>
+
+      <section id="experiment" class="view" data-route="experiment" hidden>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-i18n="experimentEyebrow">Fiktives Selbstexperiment</p>
+            <h1 data-i18n="experimentTitle">Entscheiden, bevor Sie wissen, wie es ausgeht.</h1>
+          </div>
+          <p class="section-summary" data-i18n="experimentSummary">Drei kurze Situationen verbinden Informationswahl, neue Evidenz und Entscheidung. Danach verdichtet die App Ihre Informationswege, Revisionen und Entscheidungen zu einer mehrdimensionalen Denkspur; Cipollas Folgenoptik ergänzt den fiktiven Teil.</p>
+        </div>
+        <div class="experiment-layout">
+          <div id="experiment-panel" class="experiment-panel"></div>
+          <aside class="experiment-aside">
+            <div class="aside-card">
+              <h2 data-i18n="traceHeading">Denkspur</h2>
+              <div id="trace-list" class="trace-list" aria-live="polite"></div>
+            </div>
+            <div class="aside-card outcome-card">
+              <h2 data-i18n="outcomeHeading">Folgenraum</h2>
+              <canvas id="outcome-canvas" width="500" height="380" role="img" aria-label="Perspektivische Folgenkarte"></canvas>
+              <div id="outcome-fallback" class="sr-only" aria-live="polite"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="cases" class="view" data-route="cases" hidden>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-i18n="casesEyebrow">Denkbewegungen im öffentlichen Raum</p>
+            <h1 data-i18n="casesTitle">Dokumentierte Episoden mit zeitlich begrenztem Wissensstand.</h1>
+          </div>
+          <p class="section-summary" data-i18n="casesSummary">Jede Fallseite trennt Ausgangslage, neue Evidenz, ex-post-Ausgang, analytische Rekonstruktion, Gegenlesart und Aussagegrenzen.</p>
+        </div>
+        <div class="case-toolbar">
+          <label>
+            <span data-i18n="filterLabel">Filter</span>
+            <select id="case-filter">
+              <option value="all" data-i18n="filterAll">Alle Fälle</option>
+              <option value="institution" data-i18n="filterInstitution">Institutionen</option>
+              <option value="company" data-i18n="filterCompany">Unternehmen</option>
+              <option value="prospective" data-i18n="filterProspective">Prospektiv</option>
+              <option value="history" data-i18n="filterHistory">Historisch</option>
+            </select>
+          </label>
+          <div id="case-count" class="case-count"></div>
+        </div>
+        <div id="case-grid" class="case-grid"></div>
+      </section>
+
+      <section id="case-detail" class="view" data-route="case-detail" hidden>
+        <button id="case-back" class="text-button" type="button">← <span data-i18n="backCases">Zurück zu allen Fällen</span></button>
+        <article id="case-detail-content" class="case-detail"></article>
+      </section>
+
+      <section id="essay" class="view" data-route="essay" hidden>
+        <div class="essay-shell">
+          <p class="eyebrow" data-i18n="essayEyebrow">Einführung & Erklärung</p>
+          <article id="essay-content" class="prose"></article>
+        </div>
+      </section>
+
+      <section id="method" class="view" data-route="method" hidden>
+        <div class="section-head">
+          <div><p class="eyebrow" data-i18n="methodEyebrow">Methodik</p><h1 data-i18n="methodTitle">Wie aus einem Blickwinkel ein prüfbarer Rahmen wird.</h1></div>
+          <p class="section-summary" data-i18n="methodSummary">Reale Fälle folgen einem strengeren Standard als das fiktive Selbstexperiment. Quellenstatus, Gegenlesart und Unsicherheit bleiben sichtbar.</p>
+        </div>
+        <div id="method-content" class="method-grid"></div>
+      </section>
+
+      <section id="legal" class="view" data-route="legal" hidden>
+        <div class="section-head">
+          <div><p class="eyebrow" data-i18n="legalEyebrow">Rechts-/Datenschutzstand: 13. September 2026</p><h1 id="legal-heading"></h1></div>
+          <p class="section-summary" data-i18n="legalSummary">Vorsorglich strenge Anbieterkennzeichnung, trackerfreies Frontend, quellengebundene Fallstudien und transparenter Korrekturpfad.</p>
+        </div>
+        <div id="legal-content" class="legal-grid"></div>
+        <div class="legal-note">
+          <strong data-i18n="legalNoteTitle">Hinweis vor Veröffentlichung</strong>
+          <span data-i18n="legalNoteText">Besonders reputationsrelevante personenbezogene Aussagen bleiben einem gesonderten Public-Release- und ggf. externen Rechtsreview vorbehalten.</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div><strong data-i18n="footerProject">Privates Informationsprojekt.</strong> <span data-i18n="footerIndependent">Unabhängig von den dargestellten Unternehmen, Behörden, Institutionen oder Personen.</span></div>
+      <div class="footer-links"><a href="#legal" data-i18n="footerLegal">Impressum & Datenschutz</a><span>·</span><span>thomasriepe(at)gmail.com</span></div>
+    </footer>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

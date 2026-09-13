@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thothrde.github.io/machine-looks-back/sitemap.xml

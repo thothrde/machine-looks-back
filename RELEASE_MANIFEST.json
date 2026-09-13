@@ -1,0 +1,151 @@
+{
+  "project": "Wenn die Maschine zurückschaut / When the Machine Looks Back",
+  "release": "RC5",
+  "date": "2026-09-13",
+  "publicCases": 17,
+  "publicSources": 29,
+  "fictionalScenarios": 3,
+  "languages": [
+    "de",
+    "en"
+  ],
+  "hostingTarget": "GitHub Pages",
+  "runtimeExternalDependencies": 0,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "b3bbfe308ed8c351591ca39b06dfe8c905334612658b86ed2c605b590a3a419a",
+      "bytes": 36
+    },
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "CORRECTIONS.md",
+      "sha256": "fe804e711fb09cb99c7b2c7c135661f06e0c4822bd3473adfad89bcb01150af4",
+      "bytes": 374
+    },
+    {
+      "path": "README.md",
+      "sha256": "48ac76fb32084506f79e689f0fd54060708c10ca390aa13fdcc7943c8862bce3",
+      "bytes": 2867
+    },
+    {
+      "path": "app.js",
+      "sha256": "6aae2abbcc095f5a5998aa6f7f031f7271f88b87e6c28d21f17c0b79ba29f107",
+      "bytes": 31052
+    },
+    {
+      "path": "data/content.js",
+      "sha256": "414d60c55974653dd3671a19f5c5b60d7325c33ce6526e8c20ab94c6e7ac1df7",
+      "bytes": 114081
+    },
+    {
+      "path": "docs/HOSTING_PRIVACY.md",
+      "sha256": "c063aa60d382e4cdbde2ee587ddd6da5834c96327c9fcbe3123f3c4c5e3062f0",
+      "bytes": 675
+    },
+    {
+      "path": "docs/INDEPENDENT_AUDIT_RC4_2026-09-13.md",
+      "sha256": "d6cdf5809952bf25de729115c728aef2754f7302693231870d25912036adb32e",
+      "bytes": 3172
+    },
+    {
+      "path": "docs/INDEPENDENT_AUDIT_RC5_2026-09-13.md",
+      "sha256": "08639875d24753255f9b97123d9f13fc3a124b1bb0269bce48f11c630741f4c7",
+      "bytes": 2392
+    },
+    {
+      "path": "docs/MULTI_AI_HANDOFF_RC5_2026-09-13.md",
+      "sha256": "a98be029e8524f24fc4213207e2669d553b9e6f12b114b28ae91a8d68af1c793",
+      "bytes": 15914
+    },
+    {
+      "path": "docs/RELEASE_GATE.md",
+      "sha256": "fe2b5e8a3eaeb13b2ca67c134e04223d2a24df9dc0d0066c750227bb81aa5f09",
+      "bytes": 810
+    },
+    {
+      "path": "docs/RELEASE_STATUS_2026-09-13.md",
+      "sha256": "644042894681c94ffb8491300d16cd5a34da8f400fc2d3977f8c7a35e7f67fa8",
+      "bytes": 2949
+    },
+    {
+      "path": "docs/SOURCE_METHOD.md",
+      "sha256": "470f42539caa6529959050b015669922991ccf2f089817693e8d9786e24a7f34",
+      "bytes": 781
+    },
+    {
+      "path": "docs/SOURCE_VERIFICATION_2026-09-13.md",
+      "sha256": "e61415bcf7d9ef00fc7bf682ccf95ac12788cf8da32ce7bbfe7d1493109c1069",
+      "bytes": 1972
+    },
+    {
+      "path": "index.html",
+      "sha256": "c78f3a2e40ab5fb60a51512abe22b45bea29578624a9238129d2a5eee6856353",
+      "bytes": 11081
+    },
+    {
+      "path": "package.json",
+      "sha256": "22a711682a4b60261ccaa4b86374c322670604a1a9913aa3832d68c875488ea2",
+      "bytes": 74
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "c8332c0b14519e5dae54c14f67c76462361c83b53c83ff140a102ff3de5243c3",
+      "bytes": 90
+    },
+    {
+      "path": "scripts/APPLY_RC5_AND_PUBLISH.sh",
+      "sha256": "c361a762958ab6c5ff469e723c043542c3ad5ad79a562effc3ef66cce71b0808",
+      "bytes": 2002
+    },
+    {
+      "path": "scripts/INSTALL_LOCAL.sh",
+      "sha256": "8700301ab9ebba8ac271a14d49e2e1930a365a4f3bc2a6cf1dba636280a00c66",
+      "bytes": 614
+    },
+    {
+      "path": "scripts/PREFLIGHT.sh",
+      "sha256": "e4c5f0e720472d87f0bf359f0171a30c36400689a89a56eb7295461cafc216f7",
+      "bytes": 976
+    },
+    {
+      "path": "scripts/PUBLISH_GITHUB_PAGES.sh",
+      "sha256": "1322f04861a0aaaecb5b7c2aa2b66d38452188ca522837e92b8a9f9d7cb7ecad",
+      "bytes": 2685
+    },
+    {
+      "path": "scripts/RUN_LOCAL.sh",
+      "sha256": "cba058e70fe18da4cbcca4350ddabb9c975e7c4ec6b5acf5cb96014519461768",
+      "bytes": 647
+    },
+    {
+      "path": "scripts/STOP_LOCAL.sh",
+      "sha256": "463f5929b32e181c6ed88ef737fad7f3c1ea2af6567950a73f2d3b0d361a7998",
+      "bytes": 345
+    },
+    {
+      "path": "scripts/VERIFY_PACKAGE.sh",
+      "sha256": "f38d3715fbfa2efb08285a2d5fc080c86ee46ea60d2a571d28488d0829bd3f79",
+      "bytes": 1420
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "2de775ed8faa8befec6cea9e4fb56c957899536042ba3ab871fcfc0e5d53779c",
+      "bytes": 260
+    },
+    {
+      "path": "styles.css",
+      "sha256": "45bc795587a88a525b62ff2f5c60e16b9c7c7144e41a252898496a1b236481bc",
+      "bytes": 15925
+    },
+    {
+      "path": "tests/validate.mjs",
+      "sha256": "82825bdba7c2df4f78e454a42f58f4408307071a0cd2ba4716e42cb93d3013fd",
+      "bytes": 8457
+    }
+  ]
+}
