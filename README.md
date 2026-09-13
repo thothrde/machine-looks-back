@@ -1,6 +1,6 @@
 # Wenn die Maschine zurückschaut / When the Machine Looks Back
 
-Release candidate RC5, 13 September 2026.
+Release candidate RC5.2, 13 September 2026.
 
 A static, bilingual public information app built around a multidimensional “CT scan” of reasoning movements, a finite fictional self-experiment, and source-grounded real-world case reconstructions.
 
@@ -72,6 +72,15 @@ The publishing script validates content before pushing and preserves any unrelat
 
 The public app states positively what it does. The home page, introduction, method section and case framework describe the multidimensional H/K/Q/D/G/R analysis, source-grounded episode reconstruction, counter-readings, limits of inference and publication gates directly. Trigger vocabulary such as `IQ`, `Intelligenz`, `Dummheit`, `intelligence score`, `stupidity` and `personality test` is blocked from the public application copy by the validator.
 
+
+## RC5.2 semantic corrections
+
+- final self-experiment output now renders the complete H/K/Q/D/G/R trace separately for every completed situation, preserving the three situations instead of showing only the last one
+- R0/R1 reputational-risk levels are defined publicly in German and English as editorial review-depth markers
+- duplicated Cipolla and Q wording removed
+- the English introduction has been expanded to full substantive parity with the German version
+- `tests/validate_rc52_semantics.mjs` guards these invariants in future releases
+
 ## Independent audit
 
-See `docs/INDEPENDENT_AUDIT_RC5_2026-09-13.md` for the publication audit and RC5 wording revisions.
+`docs/INDEPENDENT_AUDIT_RC5_2026-09-13.md` records the RC5 publication audit. RC5.2 adds a dedicated semantic regression test for the corrections listed above.

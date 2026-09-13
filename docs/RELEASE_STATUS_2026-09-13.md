@@ -1,4 +1,4 @@
-# Release status — RC5 — 13 September 2026
+# Release status — RC5.2 — 13 September 2026
 
 ## Deterministic PASS
 
@@ -40,6 +40,16 @@ The public explanatory layer now uses a positive descriptive rule:
 - trigger vocabulary (`IQ`, `Intelligenz`, `Dummheit`, `intelligence score`, `stupidity`, `personality test`) is forbidden in public application copy by validator
 - former “Was dieser Fall nicht zeigt” sections are presented as **Aussagegrenzen / Limits of inference** with positively framed scope statements
 
+
+## RC5.2 semantic and bilingual correction
+
+- the final self-experiment view renders one complete H/K/Q/D/G/R trace for each completed situation from the stored scenario history
+- the three situation traces remain separate so cross-situation similarities, differences and revisions stay visible
+- R0 and R1 are publicly defined as editorial reputational-risk review levels in both languages
+- duplicated Cipolla-axis wording and duplicated Q wording are removed
+- the English introduction is substantively aligned paragraph by paragraph with the German introduction, including the full H/K/Q/D/G/R explanations and the three-level ex-ante/ex-post distinction
+- a dedicated semantic regression test checks the per-scenario trace logic, bilingual field completeness, introduction structure, R0/R1 definitions and duplicate-wording guards
+
 ## Legal/privacy design
 
 - conservative provider identification under § 18 MStV
@@ -56,4 +66,4 @@ The public explanatory layer now uses a positive descriptive rule:
 - repository: `https://github.com/thothrde/machine-looks-back`
 - Pages: `https://thothrde.github.io/machine-looks-back/`
 
-RC5 is the publication candidate that incorporates the final editorial-language rule.
+RC5.2 is the publication candidate that incorporates the semantic self-experiment correction, explicit R0/R1 definitions and full German/English content parity.

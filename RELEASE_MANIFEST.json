@@ -1,6 +1,6 @@
 {
   "project": "Wenn die Maschine zurückschaut / When the Machine Looks Back",
-  "release": "RC5.1",
+  "release": "RC5.2",
   "date": "2026-09-13",
   "publicCases": 17,
   "publicSources": 29,
@@ -29,18 +29,18 @@
     },
     {
       "path": "README.md",
-      "sha256": "48ac76fb32084506f79e689f0fd54060708c10ca390aa13fdcc7943c8862bce3",
-      "bytes": 2867
+      "sha256": "4f8ac6346f03a5483c41eee20233c8349c7388709a10c8930e2a909f83d02e68",
+      "bytes": 3477
     },
     {
       "path": "app.js",
-      "sha256": "6aae2abbcc095f5a5998aa6f7f031f7271f88b87e6c28d21f17c0b79ba29f107",
-      "bytes": 31052
+      "sha256": "8807801cea91658f671ead484e6070b1f787c5f939dff2b02cb1a7b933861d2c",
+      "bytes": 32986
     },
     {
       "path": "data/content.js",
-      "sha256": "b8401ab8445685e6567c830b3cb2210216ffe0138dd4737c8ee72b19e4cfd881",
-      "bytes": 113611
+      "sha256": "1a59c89a4e689614d88104a6dc3f4e8c66cd352140fe6c911795423ee59cb547",
+      "bytes": 114246
     },
     {
       "path": "docs/HOSTING_PRIVACY.md",
@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/RELEASE_STATUS_2026-09-13.md",
-      "sha256": "644042894681c94ffb8491300d16cd5a34da8f400fc2d3977f8c7a35e7f67fa8",
-      "bytes": 2949
+      "sha256": "58ad6e18b071e0592c547f79608df981451662982d68e2defca5160111df9060",
+      "bytes": 3864
     },
     {
       "path": "docs/SOURCE_METHOD.md",
@@ -124,8 +124,8 @@
     },
     {
       "path": "scripts/VERIFY_PACKAGE.sh",
-      "sha256": "6b9fefcb3d51ef89b8c6bdd57d3c69aaf601ded954b8096bcd27cceef3124812",
-      "bytes": 3564
+      "sha256": "13f61cb3f5fb52dfa01881f819bdb1daf4b87e2cf9aaf6d43d42268cd8e934b9",
+      "bytes": 3709
     },
     {
       "path": "sitemap.xml",
@@ -134,13 +134,18 @@
     },
     {
       "path": "styles.css",
-      "sha256": "45bc795587a88a525b62ff2f5c60e16b9c7c7144e41a252898496a1b236481bc",
-      "bytes": 15925
+      "sha256": "81cbf4ed344f07ee66482592eee60378c929c414d1f73497522b90b329582320",
+      "bytes": 16126
     },
     {
       "path": "tests/validate.mjs",
       "sha256": "82825bdba7c2df4f78e454a42f58f4408307071a0cd2ba4716e42cb93d3013fd",
       "bytes": 8457
+    },
+    {
+      "path": "tests/validate_rc52_semantics.mjs",
+      "sha256": "33dc3c2f62a11988617754dcba4a46edfe577f949a31fa6409972d69c4da9166",
+      "bytes": 3749
     }
   ]
 }

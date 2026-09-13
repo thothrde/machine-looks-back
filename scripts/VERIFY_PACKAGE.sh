@@ -7,7 +7,7 @@ cd "$ROOT" || exit 1
 
 echo "=== MACHINE LOOKS BACK — CURRENT TREE VERIFY ==="
 
-for req in RELEASE_MANIFEST.json RELEASE_MANIFEST.sha256 tests/validate.mjs app.js data/content.js index.html; do
+for req in RELEASE_MANIFEST.json RELEASE_MANIFEST.sha256 tests/validate.mjs tests/validate_rc52_semantics.mjs app.js data/content.js index.html; do
   if [ ! -f "$req" ]; then
     echo "PACKAGE VERIFY FAIL: required file missing: $req"
     exit 1
@@ -16,6 +16,11 @@ done
 
 node tests/validate.mjs || {
   echo "PACKAGE VERIFY FAIL: content validator"
+  exit 1
+}
+
+node tests/validate_rc52_semantics.mjs || {
+  echo "PACKAGE VERIFY FAIL: RC5.2 semantic validator"
   exit 1
 }
 
