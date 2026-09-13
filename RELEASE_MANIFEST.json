@@ -1,6 +1,6 @@
 {
   "project": "Wenn die Maschine zurückschaut / When the Machine Looks Back",
-  "release": "RC5",
+  "release": "RC5.1",
   "date": "2026-09-13",
   "publicCases": 17,
   "publicSources": 29,
@@ -39,8 +39,8 @@
     },
     {
       "path": "data/content.js",
-      "sha256": "414d60c55974653dd3671a19f5c5b60d7325c33ce6526e8c20ab94c6e7ac1df7",
-      "bytes": 114081
+      "sha256": "b8401ab8445685e6567c830b3cb2210216ffe0138dd4737c8ee72b19e4cfd881",
+      "bytes": 113611
     },
     {
       "path": "docs/HOSTING_PRIVACY.md",
@@ -56,11 +56,6 @@
       "path": "docs/INDEPENDENT_AUDIT_RC5_2026-09-13.md",
       "sha256": "08639875d24753255f9b97123d9f13fc3a124b1bb0269bce48f11c630741f4c7",
       "bytes": 2392
-    },
-    {
-      "path": "docs/MULTI_AI_HANDOFF_RC5_2026-09-13.md",
-      "sha256": "a98be029e8524f24fc4213207e2669d553b9e6f12b114b28ae91a8d68af1c793",
-      "bytes": 15914
     },
     {
       "path": "docs/RELEASE_GATE.md",
@@ -129,8 +124,8 @@
     },
     {
       "path": "scripts/VERIFY_PACKAGE.sh",
-      "sha256": "f38d3715fbfa2efb08285a2d5fc080c86ee46ea60d2a571d28488d0829bd3f79",
-      "bytes": 1420
+      "sha256": "1896641d1a4fed0c3e31d31b365750c688bafed619ffb743f784c86b4cee75f9",
+      "bytes": 2705
     },
     {
       "path": "sitemap.xml",

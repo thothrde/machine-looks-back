@@ -1,37 +1,86 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -u
+set -o pipefail
+
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$ROOT"
-status=0
-node tests/validate.mjs || status=1
-node --check app.js || status=1
-node --check data/content.js || status=1
-python3 - <<'PY' || status=1
-from pathlib import Path
-from html.parser import HTMLParser
-import re
-root=Path('.')
-html=(root/'index.html').read_text(encoding='utf-8')
-class P(HTMLParser):
-    def __init__(self): super().__init__(); self.ids=[]; self.local=[]; self.csp=False
-    def handle_starttag(self,tag,attrs):
-        d=dict(attrs)
-        if 'id' in d: self.ids.append(d['id'])
-        if d.get('http-equiv','').lower()=='content-security-policy': self.csp=True
-        for k in ('src','href'):
-            u=d.get(k,'')
-            if u.startswith('./'): self.local.append(u[2:])
-p=P();p.feed(html)
-assert len(p.ids)==len(set(p.ids)), 'duplicate HTML ids'
-assert p.csp, 'CSP meta missing'
-for rel in p.local: assert (root/rel).exists(), f'missing local asset {rel}'
-assert (root/'robots.txt').exists() and (root/'sitemap.xml').exists()
-print(f'STATIC QA PASS: {len(p.ids)} unique IDs; {len(p.local)} local references; CSP + robots + sitemap present')
-PY
-if [[ -f RELEASE_MANIFEST.sha256 ]]; then
-  shasum -a 256 -c RELEASE_MANIFEST.sha256 || status=1
-else
-  echo 'RELEASE_MANIFEST.sha256 missing' >&2; status=1
+cd "$ROOT" || exit 1
+
+echo "=== MACHINE LOOKS BACK — CURRENT TREE VERIFY ==="
+
+if [ ! -f RELEASE_MANIFEST.json ] || [ ! -f tests/validate.mjs ]; then
+  echo "PACKAGE VERIFY FAIL: required verification files missing"
+  exit 1
 fi
-if [[ "$status" -ne 0 ]]; then echo 'PACKAGE VERIFY FAIL' >&2; exit 1; fi
-echo 'PACKAGE VERIFY PASS'
+
+node tests/validate.mjs || {
+  echo "PACKAGE VERIFY FAIL: content validator"
+  exit 1
+}
+
+node --check app.js >/dev/null || {
+  echo "PACKAGE VERIFY FAIL: app.js syntax"
+  exit 1
+}
+node --check data/content.js >/dev/null || {
+  echo "PACKAGE VERIFY FAIL: data/content.js syntax"
+  exit 1
+}
+
+python3 - <<'PY'
+from pathlib import Path
+import hashlib, json, re, sys
+
+root=Path(".")
+manifest=json.loads((root/"RELEASE_MANIFEST.json").read_text(encoding="utf-8"))
+items=manifest.get("files")
+if not isinstance(items,list) or not items:
+    raise SystemExit("PACKAGE VERIFY FAIL: manifest files[] missing")
+
+seen=set()
+for item in items:
+    rel=item.get("path")
+    sha=item.get("sha256")
+    size=item.get("bytes")
+    if not isinstance(rel,str) or not rel or rel in seen:
+        raise SystemExit(f"PACKAGE VERIFY FAIL: bad/duplicate manifest path {rel!r}")
+    seen.add(rel)
+    p=root/rel
+    if not p.is_file():
+        raise SystemExit(f"PACKAGE VERIFY FAIL: missing {rel}")
+    raw=p.read_bytes()
+    actual=hashlib.sha256(raw).hexdigest()
+    if actual != sha:
+        raise SystemExit(f"PACKAGE VERIFY FAIL: hash mismatch {rel}")
+    if len(raw) != size:
+        raise SystemExit(f"PACKAGE VERIFY FAIL: byte-size mismatch {rel}")
+
+# Public-tree hygiene invariant.
+if "docs/MULTI_AI_HANDOFF_RC5_2026-09-13.md" in seen:
+    raise SystemExit("PACKAGE VERIFY FAIL: internal handoff remains in public manifest")
+if (root/"docs/MULTI_AI_HANDOFF_RC5_2026-09-13.md").exists():
+    raise SystemExit("PACKAGE VERIFY FAIL: internal handoff remains in public tree")
+
+html=(root/"index.html").read_text(encoding="utf-8")
+if "Content-Security-Policy" not in html:
+    raise SystemExit("PACKAGE VERIFY FAIL: CSP missing")
+if 'name="referrer"' not in html or "no-referrer" not in html:
+    raise SystemExit("PACKAGE VERIFY FAIL: no-referrer missing")
+for req in ("robots.txt","sitemap.xml",".nojekyll"):
+    if not (root/req).exists():
+        raise SystemExit(f"PACKAGE VERIFY FAIL: {req} missing")
+
+# Duplicate static HTML IDs.
+ids=re.findall(r'\bid=["\']([^"\']+)["\']', html)
+if len(ids) != len(set(ids)):
+    raise SystemExit("PACKAGE VERIFY FAIL: duplicate HTML ids")
+
+print(f"STATIC QA PASS: {len(set(ids))} unique IDs; CSP + no-referrer + robots + sitemap present")
+print(f"MANIFEST VERIFY PASS: {len(items)} files")
+PY
+RC=$?
+if [ "$RC" -ne 0 ]; then
+  exit "$RC"
+fi
+
+echo "PACKAGE VERIFY PASS"
+exit 0
