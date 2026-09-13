@@ -124,8 +124,8 @@
     },
     {
       "path": "scripts/VERIFY_PACKAGE.sh",
-      "sha256": "1896641d1a4fed0c3e31d31b365750c688bafed619ffb743f784c86b4cee75f9",
-      "bytes": 2705
+      "sha256": "6b9fefcb3d51ef89b8c6bdd57d3c69aaf601ded954b8096bcd27cceef3124812",
+      "bytes": 3564
     },
     {
       "path": "sitemap.xml",
